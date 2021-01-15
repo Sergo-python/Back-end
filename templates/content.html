@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <link rel="shortcut icon" href="../static/images/morpheus.png" type="image/png">
+        <link rel="stylesheet" href="../static/css/null.css">
+        <link rel="stylesheet" href="../static/css/content.css"/>
+		<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+        <title>Content</title>
+        <!--[if lt IE 9]>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="fullscreen-bg">
+            <video loop="" muted="" autoplay="" poster="../static/images/Neon_Moment.jpg" class="fullscreen-bg__video">
+                <source src="../static/images/Neon.webm" type="video/webm">
+            </video>
+        </div>
+        <div class="form-container">
+            <form>
+              <label for="verse-choose">Choose a page</label>
+              <select id="verse-choose" name="verse-choose">
+                <option>Verse 1</option>
+                <option>Verse 2</option>
+                <option>Verse 3</option>
+                <option>Verse 4</option>
+              </select>
+            </form>
+            <p>Data from temperature indicators taken from esp32</p>
+            <pre>
+
+            </pre>
+        </div>
+
+        <script>
+
+          const verseChoose = document.querySelector('select');
+          const poemDisplay = document.querySelector('pre');
+
+          verseChoose.onchange = function() {
+            const verse = verseChoose.value;
+            updateDisplay(verse);
+          };
+
+          function updateDisplay(verse) {
+            verse = verse.replace(" ", "");
+            verse = verse.toLowerCase();
+            let url = verse + '.txt';
+
+            let request = new XMLHttpRequest();
+            request.open('GET', url);
+            request.responseType = 'text';
+
+            request.onload = function() {
+              poemDisplay.textContent = request.response;
+            };
+
+            request.send();
+          };
+
+          updateDisplay('Verse 1');
+          verseChoose.value = 'Verse 1';
+
+        </script>
+        <div>
+          <div class="input-form-container">
+              <form id="form" onsubmit="return false;">
+                  <div class="x_handler">
+                      <input  type="text" class="colortext" placeholder="x1" size="5" id="userInput_x1" />
+                      <input  type="text" class="colortext" placeholder="x2" size="5" id="userInput_x2" />
+                      <input  type="text" class="colortext" placeholder="x3" size="5" id="userInput_x3" />
+                      <input  type="text" class="colortext" placeholder="x4" size="5" id="userInput_x4" />
+                      <input  type="text" class="colortext" placeholder="x5" size="5" id="userInput_x5" />
+                  </div>
+                  <div class="y_handler">
+                      <input  type="text" class="colortext" placeholder="y1" size="5" id="userInput_y1" />
+                      <input  type="text" class="colortext" placeholder="y2" size="5" id="userInput_y2" />
+                      <input  type="text" class="colortext" placeholder="y3" size="5" id="userInput_y3" />
+                      <input  type="text" class="colortext" placeholder="y4" size="5" id="userInput_y4" />
+                      <input  type="text" class="colortext" placeholder="y5" size="5" id="userInput_y5" />
+                  </div>
+                      <input  type="submit"  class="sub_button" value="Get X & Y"  onclick="othername();" />
+              </form>
+          </div>
+
+          <script type="text/javascript">
+          function othername() {
+              var x1 = document.getElementById("userInput_x1").value;
+              var x2 = document.getElementById("userInput_x2").value;
+              var x3 = document.getElementById("userInput_x3").value;
+              var x4 = document.getElementById("userInput_x4").value;
+              var x5 = document.getElementById("userInput_x5").value;
+
+              var y1 = document.getElementById("userInput_y1").value;
+              var y2 = document.getElementById("userInput_y2").value;
+              var y3 = document.getElementById("userInput_y3").value;
+              var y4 = document.getElementById("userInput_y4").value;
+              var y5 = document.getElementById("userInput_y5").value;
+              let data = [ x1, x2, x3, x4, x5 ];
+              let labels = [y1, y2, y3, y4, y5];
+
+              let canvas = document.getElementById('canvas');
+
+
+              let ctx = canvas.getContext('2d');
+              ctx.fillStyle = "white"; // Задаём чёрный цвет для линий
+              ctx.lineWidth = 2.0; // Ширина линии
+              ctx.beginPath(); // Запускает путь
+              ctx.moveTo(30, 10); // Указываем начальный путь
+              ctx.lineTo(30, 460); // Перемешаем указатель
+              ctx.lineTo(500, 460); // Ещё раз перемешаем указатель
+              ctx.stroke(); // Делаем контур
+
+              ctx.fillStyle = "white";
+              for(let i = 0; i < 6; i++) {
+                  ctx.fillText((5 - i) * 10 + "", 4, i * 80 + 60);
+                  ctx.beginPath();
+                  ctx.moveTo(25, i * 80 + 60);
+                  ctx.lineTo(30, i * 80 + 60);
+                  ctx.stroke();
+              }
+              for(var i=0; i<5; i++) {
+                  ctx.fillText(labels[i], 50+ i*100, 475);
+              }
+              ctx.fillStyle = "#615AF3";
+              for(var i=0; i<data.length; i++) {
+                  var dp = data[i];
+                  ctx.fillRect(40 + i*100, 460-dp*8 , 50, dp*8);
+              }
+            }
+
+          </script>
+        </div>
+        <div class="graph-container">
+            <canvas width="500" height="500" id="canvas"></canvas>
+        </div>
+    </body>
+</html>
+

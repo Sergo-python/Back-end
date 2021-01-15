@@ -1,0 +1,116 @@
+@font-face {
+    /* font-family: 'AndroidInsomnia'; */
+    src: url('../fonts/AndroidInsomniaRegular.eot');
+    src: local('☺'), url('../fonts/AndroidInsomniaRegular.woff') format('woff'), url('../fonts/AndroidInsomniaRegular.ttf') format('truetype'), url('../fonts/AndroidInsomniaRegular.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+	/* font-family: 'digitalis'; */
+	src: url('../fonts/digitalis.eot');
+	src: local('☺'), url('../fonts/digitalis.woff') format('woff'), url('../fonts/digitalis.ttf') format('truetype'), url('../fonts/digitalis.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	/* font-family: 'neuropolxfree'; */
+	src: url('../fonts/neuropolxfree.eot');
+	src: local('☺'), url('../fonts/neuropolxfree.woff') format('woff'), url('../fonts/neuropolxfree.ttf') format('truetype'), url('../fonts/neuropolxfree.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+/*----------------background-----------------*/
+.fullscreen-bg {
+    overflow: hidden;
+    z-index: -100;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding-top:45%;
+}
+.fullscreen-bg__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+/*----------------background-----------------*/
+.form_auth_block{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 430px;
+    height: 400px;
+    margin: auto;
+    background-size: cover;
+    border-radius: 4px;
+}
+.form_auth_block_content{
+  padding-top: 10%;
+  padding-bottom: 10%;
+  background-color: rgba(0, 255, 255, 0.473);
+  border-radius: 5px;
+}
+.form_auth_block_head_text{
+    /* font-family: "AndroidInsomnia"; */
+    display: block;
+    text-align: center;
+    padding: 10px;
+    font-size: 25px;
+    font-weight: 400;
+    /* opacity: 0.7; */
+    color: rgb(255, 255, 255);
+}
+.form_auth_block input{
+    font-family: "neuropolxfree";
+    font-size: 15px;
+    color: rgb(52, 55, 235);
+    display: block;
+    margin: 20px auto;
+    width: 80%;
+    height: 45px;
+    border-radius: 5px;
+    border:none;
+    outline: none;
+}
+input:focus {
+  border-radius: 5px;
+  border: 2px solid rgb(52, 55, 235);
+}
+.form_auth_button{
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    height: 35px;
+    /* font-family: "AndroidInsomnia"; */
+    font-size: 20px;
+    color: white;
+    background-color: rgb(52, 55, 235);
+    border: none;
+    cursor: pointer;
+}
+.create_account {
+    /* font-family: "AndroidInsomnia"; */
+    font-size: 20px;
+    color: white;
+    margin-left: 85px;
+}
+.login {
+    /* font-family: "AndroidInsomnia"; */
+    font-size: 20px;
+    color: white;
+    margin-left: 80px;
+}
+A {
+    color:white;
+}
+::-webkit-input-placeholder {color:#3f3f44; padding-left: 10px;}
+::-moz-placeholder          {color:#3f3f44; padding-left: 10px;}
+:-moz-placeholder           {color:#3f3f44; padding-left: 10px;}
+:-ms-input-placeholder      {color:#3f3f44; padding-left: 10px;}

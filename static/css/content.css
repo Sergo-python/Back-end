@@ -1,0 +1,124 @@
+@font-face {
+	/* font-family: 'neuropolxfree'; */
+	src: url('../fonts/neuropolxfree.eot');
+	src: local('☺'), url('../fonts/neuropolxfree.woff') format('woff'), url('../fonts/neuropolxfree.ttf') format('truetype'), url('../fonts/neuropolxfree.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+    /* font-family: 'AndroidInsomnia'; */
+    src: url('../fonts/AndroidInsomniaRegular.eot');
+    src: local('☺'), url('../fonts/AndroidInsomniaRegular.woff') format('woff'), url('../fonts/AndroidInsomniaRegular.ttf') format('truetype'), url('../fonts/AndroidInsomniaRegular.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+/*----------------background-----------------*/
+.fullscreen-bg {
+    overflow: hidden;
+    z-index: -100;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding-top:45%;
+}
+.fullscreen-bg__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+/*----------------background-----------------*/
+.form-container {
+    background-color: rgba(0, 255, 255, 0.473);
+    border-radius: 4px;
+    position: absolute;
+    top: 290px;
+    right: 750px;
+    left: 0;
+    bottom: 0;
+    margin: -140px 150px;
+    border: 2px solid rgb(52, 55, 235);
+    width: 600px;
+    height: 630px;
+    font-family: 'neuropolxfree';
+    color: white;
+    font-size: 15px;
+}
+.input-form-container {
+    background-color: rgba(0, 255, 255, 0.473);
+    border-radius: 4px;
+    border: 2px solid rgb(52, 55, 235);
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0px;
+    bottom: 550px;
+    margin: 155px 950px;
+    width: 505px;
+    height: 80px;
+    font-family: 'neuropolxfree';
+    color: white;
+    font-size: 15px;
+}
+pre {
+    font-family: 'AndroidInsomnia';
+    color: white;
+    margin-top: 20px;
+    line-height: 1.5;
+    letter-spacing: 0.05rem;
+    padding: 1rem;
+    background-color: rgb(52, 55, 235);
+}
+label {
+    width: 200px;
+    margin-right: 33px;
+}
+select {
+    width: 350px;
+    padding: 5px;
+    margin-bottom: 30px;
+    font-family: 'AndroidInsomnia';
+    background-color: #022365;
+    color:white;
+}
+.form {
+    position: absolute;
+    top:50px;
+}
+.x_handler {
+    
+    width: 360px;
+    margin: 9px 30px;
+    color:  rgb(52, 55, 235);
+}
+.y_handler {
+    width: 360px;
+    margin: 13px 30px;
+}
+.colortext {
+    height: 22px;
+    background-color: #26021E;
+    color:white;
+    border-radius: 4px;
+}
+.sub_button {
+    display:inline-block;
+    position: absolute;
+    width: 90px;
+    height: 55px;
+    margin-left: 380px;
+    margin-top: -70px;
+    background-color:rgb(52, 55, 235);
+    border-radius: 4px;
+    color:white;
+}
+.graph-container {
+    margin: 60px 50px 95px 0px;
+    position: absolute;
+    left: 950px;
+    bottom: 68px;
+    border: 2px solid rgb(52, 55, 235);
+    background-color: rgba(0, 255, 255, 0.473);
+    border-radius: 4px;
+}
